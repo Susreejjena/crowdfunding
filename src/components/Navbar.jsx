@@ -39,7 +39,7 @@ const Navbar = () => {
             <Link to="/contact" className="text-gray-700 dark:text-gray-300 hover:text-purple-600">Contact</Link>
             <Link to="/create" className="flex items-center space-x-1 bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700">
               <PlusCircle className="h-5 w-5" />
-              <span>Start a Campaign</span>
+              <span>Start a campaign</span>
             </Link>
 
             {/* User Profile Dropdown */}
