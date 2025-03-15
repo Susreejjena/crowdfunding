@@ -1,12 +1,9 @@
-import React from 'react';
 import { useParams } from 'react-router-dom';
 import { Heart, Share2, AlertCircle } from 'lucide-react';
 
-const CampaignDetail = () => {
-  const { id } = useParams();
-  
-  // This would normally fetch from an API based on the ID
-  const campaign = {
+const campaigns = [
+  {
+    id: '1',
     title: 'Help Build a Community Garden',
     description: 'Creating a sustainable garden to provide fresh produce for local families in need. This project aims to transform an unused lot into a thriving community space where people can grow their own food, learn about sustainable agriculture, and build stronger community bonds.',
     image: 'https://images.unsplash.com/photo-1466692476868-aef1dfb1e735',
@@ -21,8 +18,47 @@ const CampaignDetail = () => {
         content: 'We\'ve secured the location and obtained all necessary permits!',
       }
     ]
-  };
+  },
+  {
+    id: '2',
+    title: 'Education for Rural Children',
+    description: 'Providing educational resources and supplies to children in remote areas.',
+    image: 'https://images.unsplash.com/photo-1497633762265-9d179a990aa6',
+    goal: 15000,
+    raised: 9000,
+    daysLeft: 20,
+    creator: 'NGO Foundation',
+    creatorImage: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f',
+    updates: [
+      {
+        date: '2024-03-12',
+        content: 'First batch of books and supplies delivered!',
+      }
+    ]
+  },
+  {
+    id: '3',
+    title: 'Clean Water Initiative',
+    description: 'Installing water purification systems in communities without access to clean water.',
+    image: 'https://images.unsplash.com/photo-1538300342682-cf57afb97285',
+    goal: 20000,
+    raised: 12000,
+    daysLeft: 25,
+    creator: 'WaterAid Group',
+    creatorImage: 'https://images.unsplash.com/photo-1517423440428-a5a00ad493e8',
+    updates: [
+      {
+        date: '2024-03-15',
+        content: 'Pilot installation successfully completed in one village!',
+      }
+    ]
+  }
+];
 
+const CampaignDetail = () => {
+  const { id } = useParams();
+  const campaign = campaigns.find(c => c.id === id) || campaigns[0];
+  
   const progress = (campaign.raised / campaign.goal) * 100;
 
   return (
@@ -67,8 +103,8 @@ const CampaignDetail = () => {
             <div className="bg-white rounded-lg shadow p-6 sticky top-8">
               <div className="mb-6">
                 <div className="flex justify-between mb-2">
-                  <span className="font-semibold">${campaign.raised.toLocaleString()}</span>
-                  <span className="text-gray-600">raised of ${campaign.goal.toLocaleString()}</span>
+                  <span className="font-semibold">₹{campaign.raised.toLocaleString()}</span>
+                  <span className="text-gray-600">raised of ₹{campaign.goal.toLocaleString()}</span>
                 </div>
                 <div className="w-full bg-gray-200 rounded-full h-2 mb-2">
                   <div

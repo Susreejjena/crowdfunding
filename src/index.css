@@ -1,1 +1,33 @@
-@import "tailwindcss";
+@import "tailwindcss"; 
+.navbar {
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px;
+    background-color: #333;
+  }
+  
+  .user-logo {
+    cursor: pointer;
+    color: white;
+    font-size: 24px;
+  }
+  
+  .dropdown {
+    position: absolute;
+    background-color: white;
+    padding: 10px;
+    border: 1px solid #ccc;
+  }
+  
+  .form-container {
+    margin: 50px;
+    padding: 20px;
+    border: 1px solid #ccc;
+  }
+  
+  input {
+    display: block;
+    margin-bottom: 10px;
+    padding: 10px;
+  }
+  

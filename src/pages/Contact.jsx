@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Mail, Phone, MapPin } from 'lucide-react';
 
 const Contact = () => {
@@ -27,7 +27,7 @@ const Contact = () => {
         <div className="text-center mb-16">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">Contact Us</h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Have questions about FundHope? We're here to help and would love to hear from you.
+            Have questions about FundHope? We&apos;re here to help and would love to hear from you.
           </p>
         </div>
 
@@ -69,7 +69,7 @@ const Contact = () => {
               <div className="space-y-4">
                 <div>
                   <h3 className="font-semibold">How do I start a campaign?</h3>
-                  <p className="text-gray-600">Click on "Start a Campaign" and follow the simple setup process.</p>
+                  <p className="text-gray-600">Click on &quot;Start a Campaign&quot; and follow the simple setup process.</p>
                 </div>
                 <div>
                   <h3 className="font-semibold">How long does funding take?</h3>
@@ -147,6 +147,23 @@ const Contact = () => {
               </button>
             </form>
           </div>
+        </div>
+
+        {/* Privacy Policy Section */}
+        <div className="mt-16 bg-white rounded-lg shadow-md p-8">
+          <h2 className="text-2xl font-bold mb-4 text-gray-900">Privacy Policy</h2>
+          <p className="text-gray-600 mb-4">
+            At FundHope, we value your privacy. The information you provide through this contact form is strictly used
+            for communication purposes and will never be shared with third parties without your consent.
+          </p>
+          <p className="text-gray-600 mb-4">
+            We implement industry-standard security measures to protect your data. By submitting this form, you agree
+            to our terms of service and privacy policy.
+          </p>
+          <p className="text-gray-600">
+            If you have any questions regarding how your data is handled, feel free to reach out to us via email at
+            <span className="text-purple-600 font-medium"> support@fundhope.com</span>.
+          </p>
         </div>
       </div>
     </div>
